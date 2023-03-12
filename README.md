@@ -2,7 +2,7 @@
 
 [![Hackathon][badge_hackathon]][link_hackathon]
 
-Created for Microsoft Hack Together (https://github.com/microsoft/hack-together)
+Created for [Microsoft Hack Together](https://github.com/microsoft/hack-together)
 
 ## Summary
 
@@ -38,3 +38,7 @@ Follow below steps to use this app:
 
 * [Nanddeep Nachan](https://github.com/nanddeepn)
 * [Smita Nachan](https://github.com/SmitaNachan)
+
+
+[badge_hackathon]: https://img.shields.io/badge/Microsoft%20-Hack--Together-orange?style=for-the-badge&logo=microsoft
+[link_hackathon]: https://github.com/microsoft/hack-together
