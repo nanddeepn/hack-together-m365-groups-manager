@@ -20,6 +20,10 @@ Member Groups page showing the M365 groups, an user is member of:
 
 ![Member Groups](./assets/member-groups.png)
 
+Clicking the Group name will display additional information of the Group.
+
+![Group Details](./assets/group-details.png)
+
 ## Minimal path to awesome
 
 Follow below steps to use this app:

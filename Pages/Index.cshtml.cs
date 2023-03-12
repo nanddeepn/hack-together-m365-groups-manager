@@ -42,14 +42,5 @@ namespace hack_together_groups_manager.Pages
 
             M365Groups = m365Groups;
         }
-        public ActionResult GroupDetails(string Id)
-        {
-            return RedirectToAction("GroupDetails");
-        }
-
-        public ActionResult Edit(string Id)
-        {
-            return RedirectToAction("GroupDetails");
-        }
     }
 }

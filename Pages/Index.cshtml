@@ -32,7 +32,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(m => item.DisplayName)
+                        <a href="/GroupDetails?groupId=@Html.DisplayFor(m => item.Id)">@Html.DisplayFor(m => item.DisplayName)</a>
                     </td>
                     <td>
                         @Html.DisplayFor(m => item.Description)

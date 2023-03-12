@@ -1,4 +1,58 @@
 ﻿@page
 @model hack_together_groups_manager.Pages.GroupDetailsModel
 @{
+    ViewData["Title"] = "M365 Group Details";
 }
+
+<style>
+    body {
+        padding: 20px 0;
+        background: #f2f5f8;
+    }
+</style>
+
+<div class="text-left">
+    <h3 class="display-8">Group Details: </h3>
+
+    <table>
+        <tr>
+            <td>Display Name:</td>
+            <td>@Model.M365GroupDetails.DisplayName</td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>@Model.M365GroupDetails.Description</td>
+        </tr>
+        <tr>
+            <td>Visibility:</td>
+            <td>@Model.M365GroupDetails.Visibility</td>
+        </tr>
+    </table>
+
+    <p></p>
+    <div>Owners:</div>
+    <table class="table table-striped border">
+    @foreach (var owner in Model.M365GroupDetails.Owners)
+    {
+            <tr>
+                    <td>
+                        @Html.DisplayFor(m => owner)
+                    </td>                        
+            </tr>
+    }
+    </table>
+
+    <p></p>
+    <div>Members:</div>
+    <table class="table table-striped border">
+        @foreach (var member in Model.M365GroupDetails.Members)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => member)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+    
