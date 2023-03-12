@@ -1,0 +1,48 @@
+﻿@page
+@model hack_together_groups_manager.Pages.MemberGroupsModel
+@{
+    ViewData["Title"] = "M365 Member Groups";
+}
+
+<style>
+    body {
+        padding: 20px 0;
+        background: #f2f5f8;
+    }
+</style>
+
+
+<div class="text-left">
+    <h1 class="display-8">Member Groups</h1>
+    <p><b>@Model.M365MemberGroups.Count() Groups</b>, I am member of</p>
+
+    <div class="container row" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; padding:20px;">
+        <table class="table table-striped border">
+            <tr class="table-secondary">
+                <th>
+                    Display Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Visibility
+                </th>
+            </tr>
+            @foreach (var item in Model.M365MemberGroups)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.DisplayName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Visibility)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
