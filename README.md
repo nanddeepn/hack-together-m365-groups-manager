@@ -9,7 +9,7 @@ Created for [Microsoft Hack Together](https://github.com/microsoft/hack-together
 
 Office 365 Groups is the foundational membership service, that drives all teamwork across Microsoft 365. Once in a group, we can get the benefits of the group-connected services like shared Outlook inbox, shared calendar, SharePoint site, Planner, Power BI, Yammer, and MS Teams.
 
-This application gives a consolidated view of the Microsoft 365 groups owned by an user, as well they are member of it. This solution will help an individual to manage their group membership better.
+This application gives a consolidated view of the Microsoft 365 groups owned by an user, as well they are member of it. This solution will help an individual to manage their group membership better. The application uses the [Microsoft Graph APIs for groups](https://learn.microsoft.com/en-us/graph/api/resources/group?view=graph-rest-1.0).
 
 This application will help organizations to achieve sustainability by ensuring the group well-being and reduce the carbon emissions by helping the owners to make quick decisions about the groups to manage and get rid off. 
 
