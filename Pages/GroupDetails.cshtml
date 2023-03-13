@@ -4,6 +4,15 @@
     ViewData["Title"] = "M365 Group Details";
 }
 
+<script>
+    function showConfirmation(action) {
+        if (confirm("Are you sure you want to " + action + " this group?")) {
+            // Perform the delete action
+            document.getElementById("deleteGroupForm").submit();
+        }
+    }
+</script>
+
 <style>
     body {
         padding: 20px 0;
@@ -29,8 +38,12 @@
         </tr>
     </table>
 
+    <hr />
+
     <p></p>
-    <div>Owners:</div>
+    <div>
+        <h4 class="display-8">Owners:</h4>
+    </div>
     <table class="table table-striped border">
     @foreach (var owner in Model.M365GroupDetails.Owners)
     {
@@ -42,8 +55,32 @@
     }
     </table>
 
+    @if (Model.M365GroupDetails.UserRole == "Owner")
+    {
+        <form method="post" name="addOwners">
+            <input type="hidden" name="groupId" value="@Model.M365GroupDetails.Id" />
+            <div>
+                <div><b>Add Owners</b></div>
+                <table>
+                    <tr>
+                        <td>User Principal Name:</td>
+                        <td>
+                            <input type="text" asp-for="OwnerToAdd" placeholder="UPN of owner to add..." />
+                        </td>
+                        <td>
+                            <input type="submit" id="btnAddOwner" value="Add Owner" asp-page-handler="AddOwner" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    }
+    <hr />
+
     <p></p>
-    <div>Members:</div>
+    <div>
+        <h4 class="display-8">Members:</h4>
+    </div>
     <table class="table table-striped border">
         @foreach (var member in Model.M365GroupDetails.Members)
         {
@@ -54,5 +91,41 @@
             </tr>
         }
     </table>
+
+    @if (Model.M365GroupDetails.UserRole == "Owner")
+    {
+        <form method="post" name="addMembers">
+            <input type="hidden" name="groupId" value="@Model.M365GroupDetails.Id" />
+            <div>
+                <div><b>Add Members</b></div>
+                <table>
+                    <tr>
+                        <td>User Principal Name:</td>
+                        <td>
+                                <input type="text" asp-for="MemberToAdd" placeholder="UPN of member to add..." />
+                        </td>
+                        <td>
+                                <input type="submit" id="btnAddMember" value="Add Member" asp-page-handler="AddMember" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    }
+
+    <hr />
+
+    <form method="post" name="deleteGroupForm">
+        <input type="hidden" name="groupId" value="@Model.M365GroupDetails.Id" />
+        <table>
+        <tr>
+                @if (Model.M365GroupDetails.UserRole == "Owner")
+                {
+                    <td><input type="submit" id="btnDelete" value="Delete Group" onclick="showConfirmation('delete')" asp-page-handler="Delete" /></td>
+                }
+                <td><input type="submit" id="btnLeave" value="Leave Group" onclick="showConfirmation('leave')" asp-page-handler="Leave" /></td>
+            </tr>
+        </table>
+    </form>
 </div>
     
