@@ -62,6 +62,13 @@ Below operations can be performed to manage the groups better:
 	![Add members to Group](./assets/add-member.gif)
 
 
+## Video
+
+The video walkthrough of the application is available here:
+
+[![Hack Together - M365 Groups Manager](https://img.youtube.com/vi/bolafBMUyic/0.jpg)](https://www.youtube.com/watch?v=bolafBMUyic)
+
+
 ## Minimal path to awesome
 
 Follow below steps to use this app:
